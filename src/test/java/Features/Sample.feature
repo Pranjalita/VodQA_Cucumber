@@ -1,8 +1,7 @@
+@sanity @tests
 Feature:try
 
   Scenario: sample
-
-
     Given I navigate to flipkart home page
     When I search for product "The jungle book"
     Then I should see the product "The Jungle book" in search result

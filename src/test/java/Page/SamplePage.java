@@ -13,20 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class SamplePage {
 
-    WebDriver driver;
-
-
-
-    By searchBox = By.className("LM6RPg");
-    By searchIcon = By.className("vh79eN");
+    WebDriver driver = new DriverFactory().getDriver();
 
 
     public SamplePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
-
 
     public void verifySearchResult(String product) {
         WebDriverWait wait = new WebDriverWait(driver, 100);
