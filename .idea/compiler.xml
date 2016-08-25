@@ -23,6 +23,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="POM" />
         <module name="Pranjali_new_try" />
       </profile>
     </annotationProcessing>

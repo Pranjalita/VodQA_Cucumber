@@ -11,5 +11,14 @@ public class DriverFactory {
 
     WebDriver driver = new FirefoxDriver();
 
+
     public WebDriverWait wait = new WebDriverWait(driver, 100);
+
+    public void tearDown(WebDriver driver)
+    {
+        driver.quit();
+        System.out.println("Session Ended");
+    }
+
+
 }
