@@ -9,29 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class DriverFactory {
 
-    protected static WebDriver driver;
+    WebDriver driver = new FirefoxDriver();
 
     public WebDriverWait wait = new WebDriverWait(driver, 100);
-
-    public DriverFactory() {
-        initialize();
-    }
-
-    public void initialize() {
-        if (driver == null)
-            createNewDriverInstance();
-    }
-
-    private void createNewDriverInstance() {
-        driver = new FirefoxDriver();
-    }
-
-    public WebDriver getDriver() {
-        return driver;
-    }
-
-    public void destroyDriver() {
-        driver.quit();
-        driver = null;
-    }
 }

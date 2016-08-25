@@ -26,8 +26,5 @@
         <module name="Pranjali_new_try" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Pranjali_new_try" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

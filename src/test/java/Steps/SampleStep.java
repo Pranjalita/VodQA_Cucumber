@@ -5,21 +5,19 @@ import Page.SamplePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by pranjalt on 11/08/16.
  */
-public class SampleStep extends DriverFactory {
+public class SampleStep extends DriverFactory{
 
-    By searchBox = By.className("LM6RPg");
-    By searchIcon = By.className("vh79eN");
+
 
     @Given("^I navigate to flipkart home page$")
     public void navigate_to_flipkart_home_page() throws Throwable {
-        driver.get("http://www.flipkart.com");
+    driver.get("http://www.flipkart.com");
 
     }
 
@@ -29,10 +27,11 @@ public class SampleStep extends DriverFactory {
     }
 
 
+
     @Then("^I should see the product \"([^\"]*)\" in search result$")
     public void I_should_see_the_product_in_search_result(String product) throws Throwable {
         new SamplePage(driver).verifySearchResult(product);
-    }
+        }
 
 
     @When("^I select First available option$")
@@ -53,12 +52,12 @@ public class SampleStep extends DriverFactory {
     @Then("^selected product \"([^\"]*)\" should get added to cart$")
     public void selected_product_should_get_added_to_cart(String arg1) throws Throwable {
 
-        //verify results
+       //verify results
 
     }
 
     public void enterProductInSearchBox(String product) throws Throwable {
-        WebDriverWait wait = new WebDriverWait(driver, 100);
+        WebDriverWait wait = new WebDriverWait(driver, 100);// Express the Regexp above with the code you wish you had
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchBox));
         driver.findElement(searchBox).sendKeys(product);
         driver.findElement(searchIcon).click();
