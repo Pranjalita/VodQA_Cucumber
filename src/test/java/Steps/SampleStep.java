@@ -3,11 +3,14 @@ package Steps;
 
 import Page.SamplePage;
 
+
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +23,8 @@ public class SampleStep extends DriverFactory {
 
     @Given("^I navigate to flipkart home page$")
     public void navigate_to_flipkart_home_page() throws Throwable {
-        driver.manage().window().maximize();
+        //driver.manage().window().setSize(new Dimension(1204,768));
+        driver.manage().window().setSize(new Dimension(1500,1000));
         driver.get("http://www.flipkart.com");
 
 
@@ -59,7 +63,7 @@ public class SampleStep extends DriverFactory {
         WebDriverWait wait = new WebDriverWait(driver, 20);// Express the Regexp above with the code you wish you had
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("place-order-button")));
        Assert.assertTrue(driver.findElement(By.className("place-order-button")).isDisplayed());
-        tearDown(driver);
+      //  tearDown(driver);
     }
 
 
@@ -89,12 +93,13 @@ public class SampleStep extends DriverFactory {
     }
 
     public void navigateToGoToCart() {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("_3zLR9i")));
-        driver.findElement(By.xpath("//*[contains(@class,'_3zLR9i')]")).click();
+        driver.findElement(By.className("_19RW-r")).click();
+       // driver.findElement(By.xpath("//*[contains(@class,'_3zLR9i')]")).click();
     }
 
-
+@After
     public void tearDown(WebDriver driver)
     {
         driver.close();

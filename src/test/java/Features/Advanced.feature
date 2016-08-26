@@ -1,12 +1,19 @@
 Feature:Flipkart shopping site
 
 
-  Scenario: Advanced
+  Background:
     Given I navigate to flipkart home page
-    When I search for aaa '<Product>'
-    Then aaaa
+
+
+  Scenario Outline: Advanced
+    When I search for product "<Product>"
+
 
   Examples:
   |Product|
   |The Cucumber book|
   |The Jungle book|
+
+
+
+
